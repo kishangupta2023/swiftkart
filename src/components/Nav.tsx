@@ -98,7 +98,7 @@ setSearchBarOpen(false)
         <div className='w-[95%] fixed top-4 left-1/2 -translate-x-1/2 bg-linear-to-r from-green-500 to-green-700 rounded-2xl shadow-lg shadow-black/30 flex justify-between items-center h-20 px-4 md:px-8 z-50'>
 
             <Link href={"/"} className='text-white font-extrabold text-2xl sm:text-3xl tracking-wide hover:scale-105 transition-transform'>
-                Snapcart
+                SwiftKart
             </Link>
             {user.role == "user" && <form className='hidden md:flex items-center bg-white rounded-full px-4 py-2 w-1/2 max-w-lg shadow-md' onSubmit={handleSearch}>
                 <Search className='text-gray-500 w-5 h-5 mr-2' />
