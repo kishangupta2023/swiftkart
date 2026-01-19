@@ -18,8 +18,8 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { signOut } from "next-auth/react";
 import { createPortal } from "react-dom";
-// import { useSelector } from 'react-redux'
-// import { RootState } from '@/redux/store'
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 import { useRouter } from "next/navigation";
 
 interface IUser {
@@ -36,7 +36,7 @@ function Nav({ user }: { user: IUser }) {
   const profileDropDown = useRef<HTMLDivElement>(null);
   const [searchBarOpen, setSearchBarOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  // const {cartData}=useSelector((state:RootState)=>state.cart)
+  const { cartData } = useSelector((state: RootState) => state.cart);
   const [search, setSearch] = useState("");
   const router = useRouter();
   useEffect(() => {
@@ -142,7 +142,7 @@ function Nav({ user }: { user: IUser }) {
             </div>
           </motion.div>
         </AnimatePresence>,
-        document.body
+        document.body,
       )
     : null;
 
@@ -185,7 +185,9 @@ function Nav({ user }: { user: IUser }) {
               className="relative bg-white rounded-full w-11 h-11 flex items-center justify-center shadow-md hover:scale-105 transition"
             >
               <ShoppingCartIcon className="text-green-600 w-6 h-6" />
-              {/* <span className='absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-semibold shadow'>{cartData.length}</span> */}
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-semibold shadow">
+                {cartData.length}
+              </span>
             </Link>
           </>
         )}
