@@ -7,6 +7,7 @@ import UserDashboard from "@/components/UserDashboard";
 import connectDb from "@/lib/db";
 import User from "@/models/user.model";
 import { redirect } from "next/navigation";
+import GeoUpdater from '@/components/GeoUpdater'
 
 async function Home() {
   await connectDb();
@@ -26,6 +27,7 @@ async function Home() {
   return (
     <>
       <Nav user={plainUser} />
+      <GeoUpdater userId={plainUser._id}/>
       {user.role === "user" ? (
         <UserDashboard />
       ) : user.role == "admin" ? (

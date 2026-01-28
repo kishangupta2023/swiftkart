@@ -1,6 +1,6 @@
 'use client'
-import { EyeIcon, EyeOff, Leaf, Loader2, Lock, LogIn, Mail, User } from 'lucide-react'
-import { FormEvent, useState } from 'react'
+import { EyeIcon, EyeOff,Leaf, Loader2, Lock, LogIn, Mail, User } from 'lucide-react'
+import React, { FormEvent, useState } from 'react'
 import {motion} from "motion/react"
 import Image from 'next/image'
 import googleImage from "@/assets/google.png"
@@ -19,15 +19,24 @@ function Login() {
     const handleLogin=async (e:FormEvent)=>{
         e.preventDefault()
         setLoading(true)
-        try {
-           await signIn("credentials",{
-            email,password
-           }) 
-           setLoading(false)
-        } catch (error) {
-          console.log(error)
-          setLoading(false)
-        }
+try {
+   const res = await signIn("credentials", {
+  email,
+  password,
+  redirect: false,
+})
+
+if (res?.error) {
+  alert("Invalid email or password")
+} else {
+  router.push("/") // or dashboard
+}
+  
+   setLoading(false)
+} catch (error) {
+    console.log(error)
+    setLoading(false)
+}
     }
   return (
     <div className='flex flex-col items-center justify-center min-h-screen px-6 py-10 bg-white relative'>
@@ -45,7 +54,7 @@ function Login() {
         duration:0.6
       }}
        className='text-4xl font-extrabold text-green-700 mb-2'>Welcome Back</motion.h1>
-       <p className='text-gray-600 mb-8 flex items-center'>Login To SwiftKart <Leaf className='w-5 h-5 text-green-600'/></p>
+       <p className='text-gray-600 mb-8 flex items-center'>Login To Snapcart <Leaf className='w-5 h-5 text-green-600'/></p>
        <motion.form
       onSubmit={handleLogin}
        initial={{
