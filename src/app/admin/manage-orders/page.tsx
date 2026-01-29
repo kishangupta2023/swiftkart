@@ -1,14 +1,48 @@
 "use client";
 import AdminOrderCard from "@/components/AdminOrderCard";
-import { IOrder } from "@/models/order.model";
+import { getSocket } from "@/lib/socket";
+
+import { IUser } from "@/models/user.model";
 import axios from "axios";
 import { ArrowLeft } from "lucide-react";
+
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
+interface IOrder {
+  _id?: string;
+  user: string;
+  items: [
+    {
+      grocery: string;
+      name: string;
+      price: string;
+      unit: string;
+      image: string;
+      quantity: number;
+    },
+  ];
+  isPaid: boolean;
+  totalAmount: number;
+  paymentMethod: "cod" | "online";
+  address: {
+    fullName: string;
+    mobile: string;
+    city: string;
+    state: string;
+    pincode: string;
+    fullAddress: string;
+    latitude: number;
+    longitude: number;
+  };
+  assignment?: string;
+  assignedDeliveryBoy?: IUser;
+  status: "pending" | "out of delivery" | "delivered";
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 function ManageOrders() {
   const [orders, setOrders] = useState<IOrder[]>();
-  const router=useRouter()
+  const router = useRouter();
   useEffect(() => {
     const getOrders = async () => {
       try {
@@ -19,6 +53,24 @@ function ManageOrders() {
       }
     };
     getOrders();
+  }, []);
+
+  useEffect(() => {
+    const socket = getSocket();
+    socket?.on("new-order", (newOrder) => {
+      setOrders((prev) => [newOrder, ...prev!]);
+    });
+    socket.on("order-assigned", ({ orderId, assignedDeliveryBoy }) => {
+      setOrders((prev) =>
+        prev?.map((o) =>
+          o._id == orderId ? { ...o, assignedDeliveryBoy } : o,
+        ),
+      );
+    });
+    return () => {
+      socket.off("new-order");
+      socket.off("order-assigned");
+    };
   }, []);
   return (
     <div className="min-h-screen bg-gray-50 w-full">
