@@ -15,8 +15,8 @@ function CategorySlider() {
   { id: 9, name: "Instant & Packaged Food", icon: Box, color: "bg-teal-100" },
   { id: 10, name: "Baby & Pet Care", icon: Baby, color: "bg-rose-100" },
     ]
-    const [showLeft,setShowLeft]=useState<Boolean>()
-    const [showRight,setShowRight]=useState<Boolean>()
+    const [showLeft,setShowLeft]=useState<boolean>()
+    const [showRight,setShowRight]=useState<boolean>()
     const scrollRef=useRef<HTMLDivElement>(null)
     const scroll=(direction:"left" | "right")=>{
       if(!scrollRef.current)return

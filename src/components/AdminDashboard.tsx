@@ -1,4 +1,3 @@
-import React from 'react'
 import AdminDashboardClient from './AdminDashboardClient'
 import connectDb from '@/lib/db'
 import Order from '@/models/order.model'
