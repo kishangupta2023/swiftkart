@@ -7,7 +7,7 @@ import { resolveSoa } from "dns";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import LiveMap from './LiveMap'
-// import DeliveryChat from './DeliveryChat'
+import DeliveryChat from './DeliveryChat'
 import { div } from "motion/react-client";
 import { Loader } from "lucide-react";
 // import { Bar, BarChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
@@ -117,7 +117,7 @@ function DeliveryBoyDashboard({ earning }: { earning: number }) {
 
   useEffect(() => {
     fetchCurrentOrder();
-    // fetchAssignments();
+    fetchAssignments();
   }, [userData]);
 
   const sendOtp = async () => {
@@ -201,7 +201,7 @@ function DeliveryBoyDashboard({ earning }: { earning: number }) {
             <div className='rounded-xl border shadow-lg overflow-hidden mb-6'>
               <LiveMap userLocation={userLocation} deliveryBoyLocation={deliveryBoyLocation} />
             </div>
-            {/* <DeliveryChat orderId={activeOrder.order._id} deliveryBoyId={userData?._id?.toString()!}/> */}
+            <DeliveryChat orderId={activeOrder.order._id} deliveryBoyId={userData?._id?.toString()!}/>
             <div className='mt-6 bg-white rounded-xl border shadow p-6'>
               {!activeOrder.order.deliveryOtpVerification && !showOtpBox && (
                <button

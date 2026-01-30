@@ -33,7 +33,7 @@ export interface IOrder {
     createdAt?: Date
     updatedAt?: Date
     deliveryOtp:string | null
-    deliveryOtpVerification:Boolean
+    deliveryOtpVerification:boolean
     deliveredAt:Date
 }
 

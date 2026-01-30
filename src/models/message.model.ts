@@ -6,7 +6,7 @@ export interface IMessage{
     text:string,
     senderId:mongoose.Types.ObjectId,
     time:string,
-     createdAt?:Date,
+    createdAt?:Date,
     updatedAt?:Date
 }
 
