@@ -3,7 +3,7 @@ import { getSocket } from '@/lib/socket'
 import { useEffect } from 'react'
 
 function GeoUpdater({userId}:{userId:string}) {
-    let socket=getSocket()
+    const socket=getSocket()
     socket.emit("identity",userId)
     useEffect(()=>{
       if(!userId)return

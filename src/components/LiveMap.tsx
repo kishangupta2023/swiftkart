@@ -7,7 +7,7 @@ interface Iprops {
     userLocation: ILocation
     deliveryBoyLocation: ILocation
 }
-import L, { LatLngExpression } from "leaflet"
+import L from "leaflet"
 import { MapContainer, Marker, Polyline, Popup, TileLayer, useMap } from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
 
@@ -49,7 +49,7 @@ function LiveMap({ userLocation, deliveryBoyLocation }: Iprops) {
 
 
     return (
-        <div className='w-full h-[500px] rounded-xl overflow-hidden shadow relative z-2'>
+        <div className='w-full h-125 rounded-xl overflow-hidden shadow relative z-2'>
             <MapContainer center={center as any} zoom={13} scrollWheelZoom={true} className="w-full h-full">
                 <Recenter positions={center as any}/>
                 <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

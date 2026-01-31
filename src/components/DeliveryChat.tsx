@@ -3,7 +3,7 @@ import { IMessage } from "@/models/message.model";
 import axios from "axios";
 import { Loader, Send, Sparkle } from "lucide-react";
 
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 type props = {

@@ -1,7 +1,7 @@
 'use client'
 import { Apple, Baby, Box, ChevronLeft, ChevronRight, Coffee, Cookie, Flame, Heart, Home, Milk, Wheat } from 'lucide-react'
 import React, { useEffect, useRef, useState } from 'react'
-import {motion} from "motion/react"
+import {motion} from "framer-motion"
 function CategorySlider() {
     const categories=[
   { id: 1, name: "Fruits & Vegetables", icon: Apple, color: "bg-green-100" },

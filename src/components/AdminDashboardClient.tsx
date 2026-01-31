@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { IndianRupee, Package, Truck, Users } from 'lucide-react'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
 

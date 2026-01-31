@@ -7,7 +7,7 @@ import axios from "axios";
 import { ArrowLeft, Loader, Send, Sparkle } from "lucide-react";
 
 import { useParams, useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { IMessage } from "@/models/message.model";

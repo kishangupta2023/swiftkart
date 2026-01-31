@@ -1,4 +1,3 @@
-import { connect } from "http2";
 import mongoose from "mongoose";
 
 const mongodbUrl=process.env.MONGODB_URL

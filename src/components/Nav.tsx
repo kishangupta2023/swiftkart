@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { signOut } from "next-auth/react";
 import { createPortal } from "react-dom";
 import { useSelector } from "react-redux";

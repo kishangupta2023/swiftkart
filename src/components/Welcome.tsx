@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { ArrowRight, Bike, ShoppingBasket } from 'lucide-react'
 type propType={
 nextStep:(s:number)=>void

@@ -3,7 +3,7 @@
 import axios from "axios";
 import { ArrowLeft, PackageSearch } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import UserOrderCard from "@/components/UserOrderCard";
 import { getSocket } from "@/lib/socket";

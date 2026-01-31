@@ -1,7 +1,7 @@
 'use client'
 import { EyeIcon, EyeOff,Leaf, Loader2, Lock, LogIn, Mail, User } from 'lucide-react'
 import React, { FormEvent, useState } from 'react'
-import {motion} from "motion/react"
+import {motion} from "framer-motion"
 import Image from 'next/image'
 import googleImage from "@/assets/google.png"
 import { useRouter } from 'next/navigation'

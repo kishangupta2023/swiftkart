@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { ArrowRight, Bike, User, UserCog } from "lucide-react";
 import axios from "axios";
 

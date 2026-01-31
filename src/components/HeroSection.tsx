@@ -1,6 +1,6 @@
 "use client";
 import { Leaf, ShoppingBasket, Smartphone, Truck } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

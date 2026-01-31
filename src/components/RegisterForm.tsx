@@ -1,6 +1,6 @@
-import { ArrowLeft, EyeIcon, EyeOff, Key, Leaf, Loader2, Lock, LogIn, Mail, User } from 'lucide-react'
+import { ArrowLeft, EyeIcon, EyeOff, Leaf, Loader2, Lock, LogIn, Mail, User } from 'lucide-react'
 import React, { useState } from 'react'
-import {motion} from "motion/react"
+import {motion} from "framer-motion"
 import Image from 'next/image'
 import googleImage from "@/assets/google.png"
 import axios from 'axios'

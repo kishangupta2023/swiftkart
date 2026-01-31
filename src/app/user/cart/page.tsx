@@ -2,7 +2,7 @@
 import { ArrowLeft, Minus, Plus, ShoppingBasket, Trash2 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
 import Image from "next/image";
