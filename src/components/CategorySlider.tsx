@@ -51,7 +51,8 @@ setShowRight(scrollLeft+clientWidth<=scrollWidth-5)
     useEffect(()=>{
        scrollRef.current?.addEventListener("scroll",checkScroll)
        checkScroll()
-       return ()=>removeEventListener("scroll",checkScroll)
+       return ()=>{
+        removeEventListener("scroll",checkScroll)}
     },[])
 
   return (
